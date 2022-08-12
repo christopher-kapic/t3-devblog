@@ -24,12 +24,19 @@ collections:
           fields:
             - { label: "Name", name: "name", widget: "string"}
             - { label: "Description", name: "description", widget: "text"}
-  - name: "article"
-    label: "Article"
-    folder: "content/posts"
+  - name: "articles"
+    label: "Articles"
+    folder: "content/articles"
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - label: "Author"
+        name: "author"
+        widget: "relation"
+        collection: "authors"
+        search_fields: ["name", "twitter"]
+        value_field: "name"
+        display_fields: ["name"]
       - { label: "Summary", name: "summary", widget: "string" }
       - { label: "Main Image", name: "image", widget: "image", allow_multiple: false }
       - label: "Tags"
@@ -40,3 +47,14 @@ collections:
       - { label: "Publish Date", name: "publishDate", widget: "datetime"}
       - { label: "Update Date", name: "updateDate", widget: "datetime"}
       - { label: "Content", name: "content", widget: "markdown"}
+  - name: "authors"
+    label: "Authors"
+    folder: "content/authors"
+    create: true
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Profile Photo", name: "profilePhoto", widget: "image", allow_multiple: false }
+      - { label: "Portrait", name: "portraitPhoto", widget: "image", allow_multiple: false }
+      - { label: "Twitter Handle", name: "twitter", widget: "string" }
+      - { label: "Website", name: "website", widget: "string" }
