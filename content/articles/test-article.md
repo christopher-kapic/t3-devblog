@@ -1,5 +1,6 @@
 ---
 title: Test article
+author: Christopher Kapic
 summary: This is a test article to see if my articles work.
 image: /cms/veeterzy-smqil_2v4vs-unsplash.jpg
 tags:
